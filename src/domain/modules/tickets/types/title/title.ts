@@ -1,6 +1,8 @@
 import { Injectable } from '@nestjs/common';
+import { getAmount } from 'src/shared/utils/getAmount';
+import { getBarCode } from 'src/shared/utils/getBarCode';
+import { getDays } from 'src/shared/utils/getDays';
 import { ITicket } from 'src/shared/utils/interface';
-import { addDays, getAmount, getBarCode } from 'src/infra/constFunction';
 import { validateBarCode } from 'src/shared/utils/validateBarCode';
 import { validateDigitModuleEleven } from 'src/shared/utils/validateFields';
 
@@ -11,9 +13,9 @@ export class Title {
     const barCode = getBarCode(tickets, size);
     validateBarCode(barCode, size);
     const amount = getAmount(tickets, size);
-    const expFactor = barCode.slice(5, 9);
-    const baseDate = new Date('10-07-1997');
-    const expirationDate = addDays(JSON.stringify(baseDate), Number(expFactor));
+    const dueDateFactor = barCode.slice(5, 9);
+    const baseDate = '10-07-1997';
+    const expirationDate = getDays(baseDate, Number(dueDateFactor));
 
     const result: ITicket = {
       barCode,

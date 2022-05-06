@@ -7,6 +7,7 @@ export const validateBarCode = (code: string, type: number) => {
 
   if (type === 47) {
     const barCodeVerification = Number(code[4]);
+
     const barCode = code.slice(0, 4) + code.slice(5, 44);
     const transformArray = Array.from(barCode);
     const transformArrayNumber = transformArray.map(Number);
@@ -24,7 +25,6 @@ export const validateBarCode = (code: string, type: number) => {
     const barCodeVerification = code[3];
 
     const barCode = code.slice(0, 3) + code.slice(4, 44);
-
     const transformArray = Array.from(barCode);
     const transformArrayNumber = transformArray.map(Number);
     const reverseArray = transformArrayNumber.reverse();

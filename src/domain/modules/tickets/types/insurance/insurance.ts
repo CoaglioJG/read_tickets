@@ -1,5 +1,6 @@
+import { getAmount } from 'src/shared/utils/getAmount';
+import { getBarCode } from 'src/shared/utils/getBarCode';
 import { ITicket } from 'src/shared/utils/interface';
-import { getAmount, getBarCode } from 'src/infra/constFunction';
 import { validateDigitModuleTen } from 'src/shared/utils/validateFields';
 
 export class Insurance {
