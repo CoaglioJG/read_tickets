@@ -1,6 +1,6 @@
+import { Ticket } from 'src/domain/modules/entities/ticket';
 import { getAmount } from 'src/shared/utils/getAmount';
 import { getBarCode } from 'src/shared/utils/getBarCode';
-import { ITicket } from 'src/shared/utils/interface';
 import { validateDigitModuleTen } from 'src/shared/utils/validateFields';
 
 export class Insurance {
@@ -9,7 +9,7 @@ export class Insurance {
     const barCode = getBarCode(tickets, size);
     const amount = getAmount(tickets, size);
 
-    const result: ITicket = {
+    const result: Ticket = {
       barCode,
       amount,
     };

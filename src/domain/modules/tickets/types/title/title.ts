@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
+import { Ticket } from 'src/domain/modules/entities/ticket';
 import { getAmount } from 'src/shared/utils/getAmount';
 import { getBarCode } from 'src/shared/utils/getBarCode';
 import { getDays } from 'src/shared/utils/getDays';
-import { ITicket } from 'src/shared/utils/interface';
 import { validateBarCode } from 'src/shared/utils/validateBarCode';
 import { validateDigitModuleEleven } from 'src/shared/utils/validateFields';
 
@@ -17,7 +17,7 @@ export class Title {
     const baseDate = '10-07-1997';
     const expirationDate = getDays(baseDate, Number(dueDateFactor));
 
-    const result: ITicket = {
+    const result: Ticket = {
       barCode,
       amount,
       expirationDate,
