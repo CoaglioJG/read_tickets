@@ -5,7 +5,8 @@ import { Insurance } from './types/insurance/insurance';
 import { Title } from './types/title/title';
 @Module({
   imports: [],
-  controllers: [TicketController],
-  providers: [GetTicket, Title, Insurance],
+  // controllers: [TicketController],
+  exports: [Title, Insurance],
+  providers: [Title, Insurance],
 })
 export class TicketsModule {}

@@ -14,9 +14,9 @@ export const validateBarCode = (code: string, type: number) => {
     const reverseArray = transformArrayNumber.reverse();
     verificationDigit = moduleEleven(reverseArray);
 
-    if (verificationDigit !== Number(barCodeVerification)) {
+    if (Number(verificationDigit) !== Number(barCodeVerification)) {
       throw new GenericError(
-        'Invalid bar code verification digit',
+        `Invalid bar code verification digit: ${verificationDigit} != ${barCodeVerification}`,
         400,
         'Bar code verification digit error',
       );
@@ -30,9 +30,9 @@ export const validateBarCode = (code: string, type: number) => {
     const reverseArray = transformArrayNumber.reverse();
     verificationDigit = moduleTen(reverseArray);
 
-    if (verificationDigit !== barCodeVerification) {
+    if (Number(verificationDigit) !== Number(barCodeVerification)) {
       throw new GenericError(
-        'Invalid bar code verification digit',
+        `Invalid bar code verification digit: ${verificationDigit} != ${barCodeVerification}`,
         400,
         'Bar code verification digit error',
       );
