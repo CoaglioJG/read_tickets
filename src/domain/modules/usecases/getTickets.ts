@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { checkDigitableLine } from 'src/shared/utils/checkDigitableLine';
+import { checkDigitableLine } from '../../../shared/utils/checkDigitableLine';
 import { Insurance } from '../tickets/types/insurance/insurance';
 import { Title } from '../tickets/types/title/title';
 
@@ -10,13 +10,18 @@ export class GetTicket {
     private readonly insurance: Insurance,
   ) {}
 
-  async call(ticket: string) {
+  async barCode(ticket: string) {
     checkDigitableLine(ticket);
-    const getTicket =
-      ticket.length === 47
-        ? this.title.call(ticket, ticket.length)
-        : this.insurance.call(ticket, ticket.length);
+    if (ticket.length === 47) {
+      return this.title.call(ticket, ticket.length);
+    } else {
+      return this.insurance.call(ticket, ticket.length);
+    }
+    // const getTicket =
+    //   ticket.length === 47
+    //     ? this.title.call(ticket, ticket.length)
+    //     : this.insurance.call(ticket, ticket.length);
 
-    return getTicket;
+    // return getTicket;
   }
 }

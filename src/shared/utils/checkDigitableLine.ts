@@ -15,7 +15,7 @@ export const checkDigitableLine = (ticket: string) => {
   const onlyNumbers = verifyNumber.test(ticket);
 
   if (!onlyNumbers) {
-    throw new GenericError('Just enter numbers', 400, 'Characters erros');
+    throw new GenericError('Just numbers', 400, 'Characters erros');
   }
 
   return ticketLength;

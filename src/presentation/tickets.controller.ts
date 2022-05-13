@@ -7,6 +7,6 @@ export class TicketController {
 
   @Get(':ticket')
   ticket(@Param('ticket') ticket: string) {
-    return this.getTicket.call(ticket);
+    return this.getTicket.barCode(ticket);
   }
 }

@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import { Ticket } from 'src/domain/modules/entities/ticket';
-import { getAmount } from 'src/shared/utils/getAmount';
-import { getBarCode } from 'src/shared/utils/getBarCode';
-import { getDays } from 'src/shared/utils/getDays';
-import { validateBarCode } from 'src/shared/utils/validateBarCode';
-import { validateDigitModuleEleven } from 'src/shared/utils/validateFields';
+import { Ticket } from '../../../../../domain/modules/entities/ticket';
+import { getAmount } from '../../../../../shared/utils/getAmount';
+import { getBarCode } from '../../../../../shared/utils/getBarCode';
+import { getDays } from '../../../../../shared/utils/getDays';
+import { validateBarCode } from '../../../../../shared/utils/validateBarCode';
+import { validateDigitModuleEleven } from '../../../../../shared/utils/validateFields';
 
 @Injectable()
 export class Title {

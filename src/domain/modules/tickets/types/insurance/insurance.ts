@@ -1,7 +1,7 @@
-import { Ticket } from 'src/domain/modules/entities/ticket';
-import { getAmount } from 'src/shared/utils/getAmount';
-import { getBarCode } from 'src/shared/utils/getBarCode';
-import { validateDigitModuleTen } from 'src/shared/utils/validateFields';
+import { Ticket } from '../../../../../domain/modules/entities/ticket';
+import { getAmount } from '../../../../../shared/utils/getAmount';
+import { getBarCode } from '../../../../../shared/utils/getBarCode';
+import { validateDigitModuleTen } from '../../../../../shared/utils/validateFields';
 
 export class Insurance {
   async call(tickets: string, size: number) {
