@@ -58,9 +58,11 @@ $ yarn run test:e2e
 $ yarn run test:cov
 ```
 
-# Docker
+## Docker
 
+```bash
 $ docker-compose up -d --build
+```
 
 ## Support
 
